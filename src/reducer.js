@@ -34,6 +34,18 @@ export function rootReducer(state = defaultState, action){
             }
           }
       }
+    //5. Hits the switch statement and then updates the state for re-rendering.
+    case 'CUTIE_SWITCH':
+      return {
+        //Note: make sure to make a copy and overwrite the value being changed.
+        ducks: {
+          ...state.ducks,
+          [action.payload.duckId]: {
+            ...state.ducks[action.payload.duckId],
+            isCutie: !(state.ducks[action.payload.duckId].isCutie)
+          }
+        }
+      }
     default:
       return state;
   }

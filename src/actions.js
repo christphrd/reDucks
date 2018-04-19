@@ -15,3 +15,13 @@ export let downVote = duckId => {
     }
   })
 }
+
+//4. action going to the reducer. Action is an object with type that is a string & payload
+export let cutieSwitch = duckId => {
+  return({
+    type: "CUTIE_SWITCH",
+    payload:{
+      duckId: duckId
+    }
+  })
+}
